@@ -1389,18 +1389,18 @@
                         value
                         .gender +
                         '</td>';
-                    tr.style.display = 'none'
+                    tr.style.display = 'blcok'
                     tbody.appendChild(tr);
 
                     pd.style.display = "block"
-                    pd.innerText = value.name + '是失地农民,缴纳金额为1000元'
+                    pd.innerText = value.name + '是失地农民,养老保险缴纳金额为1000元'
 
 
                 });
             } else {
                 tr.style.display = 'none'
                 pd.style.display = "none"
-                tbody.innerHTML = '查找不到数据,您不是失地用户,缴纳金额为800元';
+                tbody.innerHTML = '查找不到数据,您不是失地用户,养老保险缴纳金额为800元';
             }
 
         }
