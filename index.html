@@ -1374,6 +1374,8 @@
         ];
         //1.先获取相应是元素
         var tbody = document.querySelector('tbody');
+        var thead = document.querySelector('thead');
+
         var tr = document.querySelector('tr');
         var search_price = document.querySelector('.search-price');
         var search_name = document.querySelector('.search-name');
@@ -1408,7 +1410,8 @@
 
                 pd.style.display = "none"
                 pd1.style.display = "block"
-                pd1.innerHTML = '查找不到数据,您不是失地用户,养老保险缴纳金额为800元';
+
+                pd1.innerText = '查找不到数据,您不是失地用户\n养老保险缴纳金额为800元';
             }
 
         }
