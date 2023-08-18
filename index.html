@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -68,6 +67,10 @@
             width: 300px;
             /* display: block; */
         }
+
+        .p1 {
+            margin-top: 62px;
+        }
     </style>
 
 </head>
@@ -93,6 +96,14 @@
             </tbody>
         </table>
     </div>
+    <p class="p1">
+        为了方便大家查询是否为失地用户,特制作这个查询系统
+        <br>
+        如果有别的疑问可以咨询相关负责人
+        <br>
+        本页面仅用于查询失地的信息,禁止用于别的用途
+    </p>
+
     <script>
         var data = [{
                 "name": "邵少姣",
@@ -1360,7 +1371,8 @@
             if (mydata.length > 0) {
                 mydata.forEach(function (value) {
                     var tr = document.createElement('tr');
-                    tr.innerHTML = '<td>' + value.name + '</td><td>' + value.birthday +'年'+ '</td><td>' + value
+                    tr.innerHTML = '<td>' + value.name + '</td><td>' + value.birthday + '年' + '</td><td>' +
+                        value
                         .gender +
                         '</td>';
                     tbody.appendChild(tr);
