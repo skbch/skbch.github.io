@@ -71,6 +71,11 @@
         .p1 {
             margin-top: 62px;
         }
+
+        .pd {
+            display: none;
+            color: red;
+        }
     </style>
 
 </head>
@@ -91,10 +96,16 @@
                     <th>出生日期</th>
                     <th>性别</th>
                 </tr>
+
             </thead>
             <tbody>
             </tbody>
+
         </table>
+        <p class="pd">
+
+
+        </p>
     </div>
     <p class="p1">
         为了方便大家查询是否为失地用户,特制作这个查询系统
@@ -1362,6 +1373,8 @@
         var search_price = document.querySelector('.search-price');
         var search_name = document.querySelector('.search-name');
         var product = document.querySelector('.md');
+        var pd = document.querySelector('.pd');
+        var rm = document.querySelector('.rm');
 
         // setDate(data);
         //2.把数据渲染到页面中
@@ -1376,8 +1389,14 @@
                         .gender +
                         '</td>';
                     tbody.appendChild(tr);
+
+                    pd.style.display = "block"
+                    pd.innerText = value.name+'是失地农民'
+
+
                 });
             } else {
+                pd.style.display = "none"
                 tbody.innerHTML = '查找不到数据,您不是失地用户';
             }
 
