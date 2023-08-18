@@ -51,17 +51,18 @@
             width: 200px;
         }
 
-        table th:nth-child(1) {
+        .names {
             width: 30%;
         }
 
-        table th:nth-child(2) {
+        .cs {
             width: 40%;
         }
 
-        table th:nth-child(3) {
+        .sex {
             width: 30%;
         }
+
 
         tbody {
             width: 300px;
@@ -73,6 +74,11 @@
         }
 
         .pd {
+            display: none;
+            color: red;
+        }
+
+        .pd1 {
             display: none;
             color: red;
         }
@@ -92,20 +98,18 @@
         <table style="table-layout: fixed;">
             <thead>
                 <tr>
-                    <th>姓名</th>
-                    <th>出生日期</th>
-                    <th>性别</th>
+                    <th class="names">姓名</th>
+                    <th class="cs">出生日期</th>
+                    <th class="sex">性别</th>
                 </tr>
 
             </thead>
-            <tbody>
+            <tbody style="table-layout: fixed;">
             </tbody>
 
         </table>
-        <p class="pd">
-
-
-        </p>
+        <p class="pd"></p>
+        <p class="pd1"></p>
     </div>
     <p class="p1">
         为了方便大家查询是否为失地用户,特制作这个查询系统
@@ -1375,6 +1379,8 @@
         var search_name = document.querySelector('.search-name');
         var product = document.querySelector('.md');
         var pd = document.querySelector('.pd');
+        var pd1 = document.querySelector('.pd1');
+        var th = document.querySelector('th');
         var rm = document.querySelector('.rm');
 
         // setDate(data);
@@ -1385,22 +1391,24 @@
             if (mydata.length > 0) {
                 mydata.forEach(function (value) {
                     var tr = document.createElement('tr');
-                    tr.innerHTML = '<td>' + value.name + '</td><td>' + value.birthday + '年' + '</td><td>' +
+                    tr.innerHTML = '<td class="names">' + value.name + '</td><td class="cs">' + value.birthday +
+                        '年' + '</td><td class="sex">' +
                         value
                         .gender +
                         '</td>';
-                    tr.style.display = 'blcok'
+
                     tbody.appendChild(tr);
 
                     pd.style.display = "block"
                     pd.innerText = value.name + '是失地农民,养老保险缴纳金额为1000元'
-
+                    pd1.style.display = "none"
 
                 });
             } else {
-                tr.style.display = 'none'
+
                 pd.style.display = "none"
-                tbody.innerHTML = '查找不到数据,您不是失地用户,养老保险缴纳金额为800元';
+                pd1.style.display = "block"
+                pd1.innerHTML = '查找不到数据,您不是失地用户,养老保险缴纳金额为800元';
             }
 
         }
