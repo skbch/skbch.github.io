@@ -14,10 +14,12 @@
         .search {
             margin: 0 auto;
             margin-bottom: 10px;
+            margin-top: 100px;
         }
 
         input {
             width: 131px;
+            height: 30px;
         }
 
         table,
@@ -33,15 +35,22 @@
             text-align: center;
             border-collapse: collapse;
             padding: 2px;
-            
+
         }
- 
+
+        .main {
+            margin-top: 30px;
+        }
+        h2{
+            margin-top: 30px;
+            text-align: center;
+        }
     </style>
 
 </head>
 
 <body>
-
+    <h2>车湖村失地农民查询</h2>
     <div class="search">
         <!-- 按照价格查询：<input type="text" class="start">- <input type="text" class="end"> -->
         按照姓名查询：
@@ -86,7 +95,7 @@
         var search_name = document.querySelector('.search-name');
         var product = document.querySelector('.md');
 
-        setDate(data);
+        // setDate(data);
         //2.把数据渲染到页面中
         function setDate(mydata) {
             tbody.innerHTML = '';
