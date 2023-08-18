@@ -18,7 +18,7 @@
         }
 
         input {
-            width: 131px;
+            width: 80px;
             height: 30px;
         }
 
@@ -29,7 +29,7 @@
         }
 
         table {
-            width: 500px;
+            width: 300px;
             min-height: 25px;
             line-height: 25px;
             text-align: center;
@@ -46,9 +46,11 @@
             margin-top: 30px;
 
         }
-        tr{
+
+        tr {
             width: 200px;
         }
+
         table th:nth-child(1) {
             width: 30%;
         }
@@ -87,63 +89,7 @@
             </tbody>
         </table>
     </div>
-    <script>
-        var data = [{
-                "name": "程宇俊",
-                "gender": "男",
-                "birthday": "2010-04-21"
-            },
-            {
-                "name": "罗丽娟",
-                "gender": "女",
-                "birthday": "1986-09-17"
-            },
-            {
-                "name": "何冬英",
-                "gender": "女",
-                "birthday": "1957-11-14"
-            }
-        ];
-        //1.先获取相应是元素
-        var tbody = document.querySelector('tbody');
-        var search_price = document.querySelector('.search-price');
-        var search_name = document.querySelector('.search-name');
-        var product = document.querySelector('.md');
 
-        // setDate(data);
-        //2.把数据渲染到页面中
-        function setDate(mydata) {
-            tbody.innerHTML = '';
-
-            if (mydata.length > 0) {
-                mydata.forEach(function (value) {
-                    var tr = document.createElement('tr');
-                    tr.innerHTML = '<td>' + value.name + '</td><td>' + value.birthday + '</td><td>' + value
-                        .gender +
-                        '</td>';
-                    tbody.appendChild(tr);
-                });
-            } else {
-                tbody.innerHTML = '查找不到数据,您不是失地用户';
-            }
-
-        }
-
-        search_name.addEventListener('click', function () {
-            var arr = [];
-            data.some(function (value) {
-                console.log(product.name)
-                var names = document.querySelector('.md').value
-                if (value.name === names) {
-                    console.log("2", value);
-                    arr.push(value);
-                    return true; //用some()后面只能写true和false
-                }
-            });
-            //把拿到的数据渲染到页面中
-            setDate(arr)
-        })
-    </script>
 
 
 </body>
