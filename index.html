@@ -1393,14 +1393,14 @@
                     tbody.appendChild(tr);
 
                     pd.style.display = "block"
-                    pd.innerText = value.name + '是失地农民'
+                    pd.innerText = value.name + '是失地农民,缴纳金额为1000元'
 
 
                 });
             } else {
                 tr.style.display = 'none'
                 pd.style.display = "none"
-                tbody.innerHTML = '查找不到数据,您不是失地用户';
+                tbody.innerHTML = '查找不到数据,您不是失地用户,缴纳金额为800元';
             }
 
         }
@@ -1408,10 +1408,10 @@
         search_name.addEventListener('click', function () {
             var arr = [];
             data.some(function (value) {
-         
+
                 var names = document.querySelector('.md').value
                 if (value.name === names) {
-               
+
                     arr.push(value);
                     return true; //用some()后面只能写true和false
                 }
