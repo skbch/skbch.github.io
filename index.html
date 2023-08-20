@@ -234,6 +234,7 @@
                 "gender": "男",
                 "birthday": "1991"
             },
+            
             {
                 "name": "程梓睿",
                 "gender": "男",
@@ -1522,7 +1523,7 @@
 
         search_name.addEventListener('click', function () {
             var arr = [];
-            data.some(function (value) {
+            data.filter(function (value) {
 
                 var names = document.querySelector('.md').value
                 if (value.name === names) {
