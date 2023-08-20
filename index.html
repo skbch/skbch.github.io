@@ -1524,23 +1524,39 @@
         search_name.addEventListener('click', function () {
             var names = document.querySelector('.md').value
             var arr = [];
+
             if (names.length == 0) {
+                tbody.innerHTML = '';
                 pd.style.display = "none"
                 pd1.style.display = "block"
-                pd1.innerText = `请输入完整的姓名`;
+                pd1.innerText = `请输入姓名`;
+
             } else {
-                data.filter(function (value) {
+
+                const reg = /^[\u4e00-\u9fa5]{2,4}$/;
+                var ress = reg.test(names);
+                if (ress) {
+                    data.filter(function (value) {
 
 
-                    if (value.name === names) {
+                        if (value.name === names) {
 
-                        arr.push(value);
-                        return true; //用some()后面只能写true和false
-                    }
+                            arr.push(value);
+                            return true; //用some()后面只能写true和false
+                        }
 
-                });
-                //把拿到的数据渲染到页面中
-                setDate(arr)
+                    });
+                    //把拿到的数据渲染到页面中
+                    setDate(arr)
+                } else {
+                    tbody.innerHTML = '';
+                    pd.style.display = "none"
+                    pd1.style.display = "block"
+                    pd1.innerText = `请输入完整中文姓名`;
+                }
+
+
+
             }
 
         })
