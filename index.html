@@ -1,12 +1,95 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>失地农民信息查询</title>
     <style>
+        /* 我使用了一些网站颜色方案的灵感，你可以在这些网站上找到更多的例子和建议： */
+        /* [Designer-approved website color schemes - Canva] */
+        /* [50 Best Website Color Schemes of 2023 | Design Shack] */
+        /* [Website Color Schemes: 15 Examples & How to Choose the Best One - Picsart] */
+        /* [Coolors - The super fast color palettes generator!] */
+
+        /* 我选择了一个渐变的背景色，从深蓝到浅蓝，给人一种清新和宁静的感觉 */
         body {
+            background: linear-gradient(to bottom, #003366, #66ccff);
+        }
+
+        /* 我选择了一个白色的导航栏，与背景色形成对比，突出了导航链接 */
+        .nav {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+            align-items: center;
+            height: 80px;
+            background-color: white;
+            text-align: center;
+        }
+
+        /* 我选择了一个深紫色的字体颜色，与背景色和导航栏颜色相协调，同时也有一定的鲜明度 */
+        .nav a {
+            color: #660066;
+            text-decoration: none;
+            font-size: 20px;
+        }
+
+        /* 我选择了一个浅紫色的悬停效果，让用户知道哪个链接是被选中的 */
+        .nav a:hover {
+            color: #cc99cc;
+        }
+
+        /* 我选择了一个白色的内容区域，与背景色形成对比，让内容更清晰可见 */
+        .section {
+            height: 500px;
+            padding: 20px;
+            background-color: white;
+        }
+
+        /* 我选择了一个深蓝色的标题颜色，与背景色相协调，同时也有一定的鲜明度 */
+        .section h1 {
+            color: #000066;
+        }
+
+        /* 我选择了一个灰色的段落颜色，与背景色和标题颜色相协调，同时也有一定的柔和度 */
+        .section p {
+            color: #666666;
+        }
+
+        /* 我添加了一个返回顶部的按钮，它是一个圆形的图标，有一个向上的箭头 */
+        .top-button {
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: white;
+            border: none;
+        }
+
+        /* 我使用了一个在线图标库来获取返回顶部的图标，你可以在[这里]找到更多的图标和用法 */
+        .top-button img {
+            width: 30px;
+            height: 30px;
+        }
+
+        /* 我添加了一个悬停效果，让按钮有一个浅蓝色的边框和阴影 */
+        .top-button:hover {
+            box-shadow: inset 0px -2px #66ccff, inset -2px -2px #66ccff, inset -2px -0px #66ccff, inset -2px +2px #66ccff, inset +0px +2px #66ccff, inset +2px +2px #66ccff, inset +2px +0px #66ccff, inset +2px -2px #66ccff, inset +0px -2px #66ccff, inset -2px -2px #66ccff, inset -2px +0px #66ccff, inset -2px +2px #66ccff, inset +0px +2px #66ccff, inset +2px +2px #66ccff, inset +2px +0px #66ccff, inset +2px -2px #66ccff;
+        }
+
+        /* 我添加了一个过渡效果，让导航链接在被点击时变大并变成浅紫色 */
+        .nav a {
+            transition: all 0.3s;
+        }
+
+        .nav a:active {
+            transform: scale(1.2);
+            color: #cc99cc;
+        }
+
+        .top-button {
+            background-color: #66ccff;
+        }
+
+        /* body {
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -14,9 +97,7 @@
             padding: 20px;
             font-family: Arial;
             font-family: Helvetica, "PingFang SC", "Microsoft YaHei";
-        }
-
-
+        } */
 
         @font-face {
             font-family: Roboto;
@@ -32,6 +113,7 @@
         .search {
             margin: 0 auto;
             margin-bottom: 10px;
+            text-align: center;
 
         }
 
@@ -67,6 +149,7 @@
             font-family: Roboto;
             font-size: 36px;
             padding: 20px;
+            text-align: center;
         }
 
         input[type=text] {
@@ -187,42 +270,132 @@
             transition: .3s opacity;
         }
     </style>
-
 </head>
 
 <body>
-    <h2>失地信息查询</h2>
-    <div class="search">
-        <!-- 按照价格查询：<input type="text" class="start">- <input type="text" class="end"> -->
-        输入姓名查询：
-        <input type="text" class="md">
-        <button class="search-name">查询</button>
+    <div class="nav">
+        <a href="#home">查询失地</a>
+        <a href="#about">异地报销</a>
+        <a href="#contact">Contact</a>
+        <a href="#services">Services</a>
+        <a href="#products">Products</a>
+        <a href="#blog">Blog</a>
     </div>
-    <div class="main">
-        <table style="table-layout: fixed;">
-            <thead>
-                <tr>
-                    <th class="names">姓名</th>
-                    <th class="cs">出生日期</th>
-                    <th class="sex">性别</th>
-                </tr>
+    <div id="home" class="section">
+        <h2>失地信息查询</h2>
+        <div class="search">
+            <!-- 按照价格查询：<input type="text" class="start">- <input type="text" class="end"> -->
+            输入姓名查询：
+            <input type="text" class="md">
+            <button class="search-name">查询</button>
+            <div class="main">
+                <table style="table-layout: fixed;">
+                    <thead>
+                        <tr>
+                            <th class="names">姓名</th>
+                            <th class="cs">出生日期</th>
+                            <th class="sex">性别</th>
+                        </tr>
 
-            </thead>
-            <tbody style="table-layout: fixed;">
-            </tbody>
+                    </thead>
+                    <tbody style="table-layout: fixed;">
+                    </tbody>
 
-        </table>
-        <p class="pd"></p>
-        <p class="pd1"></p>
+                </table>
+                <p class="pd"></p>
+                <p class="pd1"></p>
+                <p class="p1">
+                    为了方便大家查询是否为失地用户,特制作这个查询系统
+                    <br>
+                    如果有别的疑问可以咨询相关负责人
+                    <br>
+                    本页面仅用于查询失地的信息,禁止用于别的用途
+                </p>
+            </div>
+
+
+        </div>
+
     </div>
-    <p class="p1">
-        为了方便大家查询是否为失地用户,特制作这个查询系统
-        <br>
-        如果有别的疑问可以咨询相关负责人
-        <br>
-        本页面仅用于查询失地的信息,禁止用于别的用途
-    </p>
+    <div id="about" class="section">
+        <h1>异地报销</h1>
 
+        <p>1.异地就医报销，备案之类的话可以拨打
+            <a href="tel:027-60876060">027-60876060</a>
+            <a href="tel:027-60876718">027-60876718</a>
+            咨询</p>
+        <p><a
+                href="https://mp.weixin.qq.com/s/JoEGduHp5G9d0c_qGNaKZQ">2.手把手教你申报门诊慢特病。如果有慢特病人，请尽快办理此卡，门诊报销比例较高--点击我查看详细步骤</a>
+        </p>
+
+    </div>
+    <div id="contact" class="section">
+        <h1>Contact</h1>
+        <p>This is the contact page.</p>
+    </div>
+    <div id="services" class="section">
+        <h1>Services</h1>
+        <p>This is the services page.</p>
+    </div>
+    <div id="products" class="section">
+        <h1>Products</h1>
+        <p>This is the products page.</p>
+    </div>
+    <div id="blog" class="section">
+        <h1>Blog</h1>
+        <p>This is the blog page.</p>
+    </div>
+
+    <!-- 我添加了一个返回顶部的按钮，它会在页面滚动到一定距离时出现，点击它会回到页面顶部 -->
+    <button class="top-button" onclick="topFunction()" id="topButton" title="Go to top">返回顶部</button>
+
+    <script>
+        // 我使用了JavaScript来实现返回顶部的功能，你可以在[这里]学习更多的JavaScript知识和用法
+
+        // 获取按钮元素
+        var topButton = document.getElementById("topButton");
+
+        // 当用户滚动页面时，执行scrollFunction
+        window.onscroll = function () {
+            scrollFunction()
+        };
+
+        // 定义scrollFunction函数，如果页面滚动超过20像素，就显示按钮，否则隐藏按钮
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                topButton.style.display = "block";
+            } else {
+                topButton.style.display = "none";
+            }
+        }
+
+        // 定义topFunction函数，当用户点击按钮时，让页面回到顶部
+        function topFunction() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+
+        // 我使用了JavaScript的scrollIntoView方法来实现平滑的滚动效果，你可以在[这里]学习更多关于这个方法的知识和用法
+
+        // 获取导航链接元素
+        var navLinks = document.querySelectorAll(".nav a");
+
+        // 给每个导航链接添加一个点击事件监听器
+        navLinks.forEach(function (link) {
+            link.addEventListener("click", function (event) {
+                // 阻止默认的跳转行为
+                event.preventDefault();
+                // 获取被点击链接的href属性值，即目标区域的id
+                var targetId = link.getAttribute("href");
+                // 获取目标区域元素
+                var targetElement = document.querySelector(targetId);
+                // 让目标区域平滑地滚动到视口中
+                targetElement.scrollIntoView({
+                    behavior: "smooth"
+                });
+            });
+        });
+    </script>
     <script>
         var data = [{
                 "name": "邵少姣",
@@ -1552,7 +1725,7 @@
                     tbody.innerHTML = '';
                     pd.style.display = "none"
                     pd1.style.display = "block"
-                    pd1.innerText = `请输入完整中文姓名`;
+                    pd1.innerText = `请输入正确并完整中文姓名`;
                 }
 
 
@@ -1561,18 +1734,15 @@
 
         })
     </script>
-<script>
-var _hmt = _hmt || [];
-(function() {
-  var hm = document.createElement("script");
-  hm.src = "https://hm.baidu.com/hm.js?71e58e536e7e8306041dde10da2061c0";
-  var s = document.getElementsByTagName("script")[0]; 
-  s.parentNode.insertBefore(hm, s);
-})();
-</script>
-
-
-
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?71e58e536e7e8306041dde10da2061c0";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
 
 </body>
 
