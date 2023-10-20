@@ -5,27 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
-        .nav {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-            align-items: center;
-            height: 80px;
-            background-color: white;
-            text-align: center;
-        }
-
-        /* 我选择了一个深紫色的字体颜色，与背景色和导航栏颜色相协调，同时也有一定的鲜明度 */
-        .nav a {
-            color: #660066;
-            text-decoration: none;
-            font-size: 20px;
-        }
-
-        /* 我选择了一个浅紫色的悬停效果，让用户知道哪个链接是被选中的 */
-        .nav a:hover {
-            color: #cc99cc;
-        }
-
         /* 我选择了一个白色的内容区域，与背景色形成对比，让内容更清晰可见 */
         .section {
             height: 500px;
@@ -80,15 +59,9 @@
             background-color: #66ccff;
         }
 
-        /* body {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin: 0;
-            padding: 20px;
-            font-family: Arial;
-            font-family: Helvetica, "PingFang SC", "Microsoft YaHei";
-        } */
+        body {
+            width: 100%;
+        }
 
         @font-face {
             font-family: Roboto;
@@ -283,6 +256,7 @@
             /* 我把内容区域的高度调小了，让用户可以看到更多的内容 */
             .section {
                 height: 300px;
+                width: 100%;
             }
 
             p {
@@ -301,12 +275,13 @@
             .search-name {
                 font-size: 24px;
             }
-                  input[type=text] {
-                  padding: 15Px;
-                  border: 1px solid #ccc;
-                  border-radius: 4px;
-                  box-shadow: inset 0 0 8px rgba(0, 0, 255, .2);
-                  }
+
+            input[type=text] {
+                padding: 15Px;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                box-shadow: inset 0 0 8px rgba(0, 0, 255, .2);
+            }
 
         }
     </style>
